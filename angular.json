@@ -31,6 +31,9 @@
               }
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/theme/variables.scss",
               "src/global.scss"
             ],
@@ -99,7 +102,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              }
+            ],
             "scripts": [],
             "assets": [
               {
