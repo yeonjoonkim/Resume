@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webappresume": {
+      "hosting": {
+        "app": [
+          "yjk"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webappresume"
+  }
+}
