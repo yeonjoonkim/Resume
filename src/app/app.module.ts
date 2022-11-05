@@ -14,6 +14,18 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import {AngularFireModule} from '@angular/fire/compat';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarcodesModule } from '@progress/kendo-angular-barcodes';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+
+
+
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +38,7 @@ import {AngularFireModule} from '@angular/fire/compat';
     provideAuth(() => getAuth()), 
     provideDatabase(() => getDatabase()), 
     provideFirestore(() => getFirestore()), 
-    provideFunctions(() => getFunctions())],
+    provideFunctions(() => getFunctions()), DateInputsModule, BrowserAnimationsModule, BarcodesModule, ChartsModule, ScrollViewModule],
 
   providers: [{ 
     provide: RouteReuseStrategy, 
