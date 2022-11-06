@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-menu-button class="menu_btn" autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <img id="logo" src="assets/icon/logo.png" width="200" height="200">
+            </div>
+
+            <ul class="navbar_menu">
+                <!--Todo: Button actions-->
+            </ul>
+            <ul class="navbar_icons">
+                <ul class="navbar_action_btn">
+                    <li *ngFor="let page of menu.pages">
+                        <a href="{{page.url}}">
+                            <ion-icon name="{{page.icon}}"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+                <li>
+                    <a href="{{menu.linkedIn.url}}">
+                        <ion-icon name="{{menu.linkedIn.icon}}"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{menu.gitHub.url}}">
+                        <ion-icon name="{{menu.gitHub.icon}}"></ion-icon>
+                    </a>
+                </li>
+                <ul class="navbar_action_btn">
+                    <li>
+                        <a *ngIf="!isAuth">Register</a>
+                        <a *ngIf="isAuth">View Access History</a>
+                    </li>
+                    <li>
+                        <a *ngIf="!isAuth">Login</a>
+                        <a *ngIf="isAuth">Logout</a>
+                    </li>
+                </ul>
+            </ul>
+        </nav>
+    </ion-toolbar>
+</ion-header>

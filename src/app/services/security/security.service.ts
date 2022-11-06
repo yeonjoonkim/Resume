@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AccessInfo, IpAddress } from '../interface/security/security.interface';
+import { AccessInfo, IpAddress } from '../../interface/security/security.interface';
+import { FirebaseRepositoryService } from '../firebase/firebase-repository.service';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-import { FirebaseRepositoryService } from './firebase-repository.service';
 
 @Injectable({
   providedIn: 'root'
