@@ -42,6 +42,9 @@
     "firebase": "^9.13.0",
     "hammerjs": "^2.0.0",
     "ionicons": "^6.0.3",
+    "ip": "^2.0.0",
+    "ngx-device-detector": "^4.0.1",
+    "request-ip": "^3.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
