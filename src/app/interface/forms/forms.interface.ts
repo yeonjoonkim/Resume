@@ -4,6 +4,8 @@ export interface UserRegisterForm{
    emailAddress: string;
    marketingAgreement: boolean;
    password: string;
+   createdDate: Date;
+   isActive: boolean;
  } 
 
  export interface UserRegisterFormValiationResult{

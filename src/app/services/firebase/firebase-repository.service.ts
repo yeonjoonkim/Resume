@@ -15,6 +15,8 @@ export class FirebaseRepositoryService {
     this.firestore.collection(this._accessHistory).ref.add(accessData);
   }
 
+  /**This function is to save the user profile using uid when new user trigger the submit register form.*/
   public addUserProfile(form: UserRegisterForm, uid: string){
+    this.firestore.collection(this._userProfile).doc(uid).set(form);
   }
 }

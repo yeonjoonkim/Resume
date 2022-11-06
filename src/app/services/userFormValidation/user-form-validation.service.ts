@@ -42,7 +42,7 @@ export class UserFormValidationService {
   public captialisedName(name: string){
     let words: Array<string> = name.split(" ");
     return words.map(word => {
-      return word[0].toUpperCase() + word.substring(1)}).join(" "); 
+      return word[0].toUpperCase() + word.substring(1).toLowerCase()}).join(" "); 
   }
 
   /** check if the fields have value */
