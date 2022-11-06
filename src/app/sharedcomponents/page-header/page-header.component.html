@@ -31,12 +31,12 @@
                 </li>
                 <ul class="navbar_action_btn">
                     <li>
-                        <a *ngIf="!isAuth">Register</a>
-                        <a *ngIf="isAuth">View Access History</a>
+                        <a *ngIf="!isAuth" (click)="openUserRegister()">Register</a>
+                        <a *ngIf="isAuth" (click)="openAccessHistoryView()">View Access History</a>
                     </li>
                     <li>
-                        <a *ngIf="!isAuth">Login</a>
-                        <a *ngIf="isAuth">Logout</a>
+                        <a *ngIf="!isAuth" (click)="openLogin()">Login</a>
+                        <a *ngIf="isAuth" (click)="logOut()">Logout</a>
                     </li>
                 </ul>
             </ul>

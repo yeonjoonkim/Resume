@@ -5,6 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { SecurityService } from './services/security/security.service';
 import { MenuService } from './services/system/menu.service';
 import { MenuComponent } from './interface/menu/page.interface';
+import { ModalController } from '@ionic/angular';
+import { RegisterUserComponent } from '../app/sharedcomponents/register-user/register-user.component';
+import { LogInComponent } from '../app/sharedcomponents/log-in/log-in.component';
+
 
 @Component({
   selector: 'app-root',
@@ -22,7 +26,8 @@ export class AppComponent {
     private readonly _menuService: MenuService,     
     private platform: Platform,
     private statusBar: StatusBar,
-    private splashScreen: SplashScreen) {
+    private splashScreen: SplashScreen,
+    private modalCtrl: ModalController) {
       this.menu = this._menuService.getPageComponent();
       this.setDefaultPageActivePageTitle();
       this._security.getAccessInfo();
@@ -40,6 +45,33 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  async openUserRegister(){
+    let register = await this.modalCtrl.create({
+      component: RegisterUserComponent
+    });
+
+    register.present();
+  }
+
+  async openLogin(){
+    let loginComponent = await this.modalCtrl.create({
+      component: LogInComponent
+    });
+
+    loginComponent.present();
+  }
+
+  async openAccessHistoryView(){
+    let loginComponent = await this.modalCtrl.create({
+      component: LogInComponent
+    });
+
+    loginComponent.present();
+  }
+
+  async logOut(){
   }
 
 }

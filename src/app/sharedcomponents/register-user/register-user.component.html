@@ -1,3 +1,42 @@
-<p>
-  register-user works!
-</p>
+<!--Register Form Header-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Register Form</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!--Content-->
+<ion-content>
+    <section class="register_form">
+        <ion-item>
+            <ion-label>Email Address</ion-label>
+            <ion-input placeholder="example.sample@sample.com" type="email" [(ngModel)]="emailAddress"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>First Name</ion-label>
+            <ion-input type="name" [(ngModel)]="firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Last Name</ion-label>
+            <ion-input type="name" [(ngModel)]="lastName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Confirm Password</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Would you like to receive news & offers?</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="marketingAgreement"></ion-checkbox>
+        </ion-item>
+    </section>
+
+    <!--Submit Button-->
+    <ion-button class="register_submit_btn" (click)="submit()">Create Login Account</ion-button>
+</ion-content>
