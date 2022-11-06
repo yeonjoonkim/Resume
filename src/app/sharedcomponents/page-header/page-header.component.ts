@@ -3,6 +3,9 @@ import { MenuService } from '../../services/system/menu.service';
 import { MenuComponent } from 'src/app/interface/menu/page.interface';
 import { SiteOwner } from 'src/app/interface/siteOwner/security.interface';
 import { SiteOwnerService } from 'src/app/services/system/site-owner.service';
+import { ModalController } from '@ionic/angular';
+import { RegisterUserComponent } from '../register-user/register-user.component';
+import { LogInComponent } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-page-header',
@@ -13,11 +16,37 @@ export class PageHeaderComponent implements OnInit {
   public menu: MenuComponent;
   public owner: SiteOwner;
   public isAuth: boolean = false;
-  constructor(private _menuService: MenuService, private _siteOwnerService: SiteOwnerService) {
+  constructor(private _menuService: MenuService, private _siteOwnerService: SiteOwnerService, private modalCtrl: ModalController) {
     this.menu = this._menuService.getPageComponent();
     this.owner = this._siteOwnerService.getSiteOwnerDetail();
   }
 
   ngOnInit() {}
 
+  async openUserRegister(){
+    let register = await this.modalCtrl.create({
+      component: RegisterUserComponent
+    });
+
+    register.present();
+  }
+
+  async openLogin(){
+    let loginComponent = await this.modalCtrl.create({
+      component: LogInComponent
+    });
+
+    loginComponent.present();
+  }
+
+  async openAccessHistoryView(){
+    let loginComponent = await this.modalCtrl.create({
+      component: LogInComponent
+    });
+
+    loginComponent.present();
+  }
+
+  async logOut(){
+  }
 }
