@@ -1,0 +1,44 @@
+<ion-footer>
+    <div class="footer_container ">
+        <div class="col1 ">
+            <ul class="info ">
+                <li class="copyright">
+                    <p>&copy; {{owner.copyRight}}</p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col2 ">
+
+            <ul class="col2_menu ">
+                <li *ngFor="let page of menu.pages">
+                    <a href="{{page.url}}">{{page.title}}</a>
+                </li>
+                <li>
+                    <a href="{{menu.linkedIn.url}}">{{menu.linkedIn.name}}</a>
+                </li>
+                <li>
+                    <a href="{{menu.gitHub.url}}">{{menu.gitHub.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col3">
+            <ul class="info">
+                <li>
+                    <a href="{{owner.abnUrl}}">ABN: {{owner.abnNumber}}</a>
+                </li>
+                <li>
+                    <a href="tel:{{owner.phoneUrl}}">
+                        <ion-icon name="call-outline"></ion-icon> {{owner.phone}}
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:{{owner.email}} ">
+                        <ion-icon name="mail-open-outline"></ion-icon> {{owner.email}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</ion-footer>

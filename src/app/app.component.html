@@ -1,3 +1,40 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu contentId="main-content" type="overlay">
+
+        <ion-content>
+            <ion-list id="menu_list">
+                <ion-menu-toggle auto-hide="false" *ngFor="let page of menu.pages; let i = index">
+                    <ion-item (click)="activeIndex = i" routerDirection="root" [routerLink]="[page.url]" lines="none" detail="false" [class.selected]="activeIndex === i">
+                        <ion-icon name="{{page.icon}}"></ion-icon>
+                        <ion-label class="title">{{ page.title }}</ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+            <ion-list id="menu_list">
+                <li>
+                    <a href="{{menu.linkedIn.url}}">
+                        <ion-icon name="{{menu.linkedIn.icon}}"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{menu.gitHub.url}}">
+                        <ion-icon name="{{menu.gitHub.icon}}"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a *ngIf="!isAuth">Register</a>
+                </li>
+                <li>
+                    <a *ngIf="!isAuth">Login</a>
+                    <a *ngIf="isAuth">Logout</a>
+                </li>
+            </ion-list>
+
+        </ion-content>
+
+    </ion-menu>
+    <app-page-header></app-page-header>
+    <ion-router-outlet id="main-content">
+    </ion-router-outlet>
+    <app-page-footer></app-page-footer>
 </ion-app>

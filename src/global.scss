@@ -1,26 +1,340 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
-/* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
+
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
+
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+ion-toolbar {
+    --background: #595F67;
+}
+
+ion-title {
+    color: white;
+}
+
+.menu_btn {
+    color: white;
+}
+
+.navbar {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #595F67;
+    padding: 8px 12px;
+}
+
+ion-content {
+    --background: white;
+}
+
+ion-header {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar_logo {
+    align-items: left;
+    #logo {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li {
+    padding: 8px 50px;
+    border-radius: 10px;
+}
+
+.navbar_icons {
+    list-style: none;
+    color: white;
+    display: flex;
+    padding: 0;
+}
+
+.navbar_icons li {
+    padding: 8px 12px;
+    ion-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.navbar_action_btn {
+    list-style: none;
+    color: white;
+    display: flex;
+    padding: 0;
+    font-size: 14px;
+    li {
+        padding: 13px;
+        height: 20px;
+    }
+}
+
+ion-footer {
+    bottom: 0px;
+    width: 100%;
+    height: 150px;
+    background: #595F67;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-style: bold;
+    h1 {
+        font-size: 25px;
+    }
+    .copyright {
+        text-align: left;
+    }
+    .copyright p {
+        margin: 0;
+    }
+    .copyright a {
+        margin: 0;
+    }
+    .info {
+        list-style: none;
+        float: right;
+        text-align: right;
+        flex: 1;
+        width: 100%;
+        padding: 0;
+    }
+    .info li {
+        text-decoration: none;
+        padding: 5px 40px;
+        a {
+            margin: 5px;
+        }
+    }
+    .footer_container {
+        display: flex;
+    }
+    .col1 {
+        flex: 30%;
+        display: flex;
+        align-items: flex-end;
+    }
+    .col3 {
+        flex: 30%;
+        display: flex;
+        align-items: flex-end;
+    }
+    ion-icon {
+        color: white;
+    }
+    .col2 {
+        flex: 30%;
+        display: flex;
+        align-items: center;
+    }
+    .col2_menu {
+        list-style: none;
+        text-align: center;
+        flex: 1;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        margin: 10px;
+        padding: 5px 40px;
+        bottom: 9;
+        li {
+            padding: 5px 40px;
+            a {
+                margin: 5px;
+                color: white;
+            }
+        }
+    }
+}
+
+.back-to-top-btn {
+    background: #E19E20;
+    position: fixed;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10%;
+    transform: translateX(0);
+    bottom: 120px;
+    z-index: 999;
+}
+
+@media screen and (max-width: 877px) {
+    .menu_btn {
+        display: block;
+    }
+    .navbar {
+        display: block;
+        height: 90px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar_logo {
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .navbar_menu li {
+        display: none;
+    }
+    .navbar_icons {
+        padding: 10px;
+        display: none;
+        justify-content: left;
+        width: 100%;
+    }
+    .navbar_toogleBtn {
+        display: block;
+    }
+    ion-footer {
+        bottom: 0;
+        height: 220px;
+        width: 100%;
+        .footer_container {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            display: table;
+            .col2 {
+                display: table-row-group;
+                background-color: #CED5DE;
+            }
+            .col3 {
+                display: table-row-group;
+            }
+            .col1 {
+                display: table-footer-group;
+            }
+            .copyright {
+                text-align: center;
+            }
+            .copyright p {
+                margin: 0;
+            }
+            .copyright a {
+                margin: 0;
+            }
+            .info {
+                list-style: none;
+                text-align: center;
+                flex: 1;
+                width: 100%;
+                margin: 10px;
+            }
+            .col2_menu {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                li {
+                    padding: 10px 30px;
+                }
+                a {
+                    margin: 0px;
+                    color: #548091;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .back-to-top-btn {
+        width: 50px;
+        height: 50px;
+    }
+    ion-footer {
+        bottom: 0;
+        height: 270px;
+        .footer_container {
+            text-align: center;
+            align-items: center;
+            display: table;
+            .col2 {
+                display: table-row-group;
+                background-color: #CED5DE;
+            }
+            .col3 {
+                display: table-row-group;
+            }
+            .col1 {
+                display: table-footer-group;
+            }
+            .copyright {
+                text-align: center;
+            }
+            .copyright p {
+                margin: 0;
+            }
+            .copyright a {
+                margin: 0;
+            }
+            .info {
+                list-style: none;
+                text-align: center;
+                flex: 1;
+                width: 100%;
+                margin: 10px;
+                li {
+                    padding: 10px;
+                }
+                a {
+                    margin: 0px;
+                }
+            }
+            .col2_menu {
+                display: flex;
+                list-style: none;
+                align-items: left;
+                text-align: left;
+                justify-content: center;
+                li {
+                    padding: 10px;
+                }
+                a {
+                    margin: 0px;
+                    color: #548091;
+                }
+            }
+        }
+    }
+}
