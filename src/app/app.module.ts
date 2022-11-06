@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+
 
 //Side Bar
 import { Platform } from '@ionic/angular';
@@ -34,6 +36,8 @@ import { LogInComponent } from './sharedcomponents/log-in/log-in.component';
 import { RegisterUserComponent } from './sharedcomponents/register-user/register-user.component';
 import { PageHeaderComponent } from './sharedcomponents/page-header/page-header.component';
 import { PageFooterComponent } from './sharedcomponents/page-footer/page-footer.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+
 @NgModule({
   declarations: [
     AppComponent, 
@@ -64,12 +68,14 @@ import { PageFooterComponent } from './sharedcomponents/page-footer/page-footer.
     BrowserAnimationsModule, 
     BarcodesModule, 
     ChartsModule, 
-    ScrollViewModule],
+    ScrollViewModule, InputsModule],
     exports: [AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
       PageHeaderComponent,
-      PageFooterComponent ],
+      PageFooterComponent,
+      FormsModule ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [
     Platform,
