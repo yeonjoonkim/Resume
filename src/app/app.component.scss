@@ -34,11 +34,14 @@ ion-item {
 
 #menu_list {
     color: #CED5DE;
-    padding: 40px;
 }
 
 #menu_list li {
     padding: 40px;
+}
+
+#menu_list li a {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 877px) {

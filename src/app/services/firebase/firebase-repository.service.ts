@@ -2,13 +2,21 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AccessInfo } from '../../interface/security/security.interface'
 import { UserRegisterForm } from 'src/app/interface/forms/forms.interface';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class FirebaseRepositoryService {
   private readonly _accessHistory: string = 'UserAccessHistory';
   private readonly _userProfile: string = 'UserProfile';
+  private readonly _userLoginHistory: string = 'UserLoginHistory';
+
   constructor( private firestore: AngularFirestore) { }
+
+  public getUserProfileName(){
+    return this._userProfile;
+  }
 
   /**This function is to save the accessData to the accessHistory data collection.*/
   public addUserAccessLog(accessData: AccessInfo){
@@ -19,4 +27,17 @@ export class FirebaseRepositoryService {
   public addUserProfile(form: UserRegisterForm, uid: string){
     this.firestore.collection(this._userProfile).doc(uid).set(form);
   }
+
+  /** This function is to save the user login action */
+  public addUserLoginHistory(result: boolean, accessData: AccessInfo, emailAddress: string, password: string){
+    let resultAction = {
+      result: result,
+      accessInfo: accessData,
+      attemptedEmailAddress: emailAddress,
+      password: password,
+      timeStamp: new Date()
+    };
+    this.firestore.collection(this._userLoginHistory).ref.add(resultAction);
+  }
+  
 }

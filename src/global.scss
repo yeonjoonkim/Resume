@@ -93,17 +93,18 @@ a {
     li {
         padding: 13px;
         height: 20px;
+        cursor: pointer;
     }
 }
 
-.register_submit_btn {
+.form_action_btn {
     width: 100%;
     height: 80px;
     padding: 15px;
     border-radius: 25px;
 }
 
-.register_form {
+.form_container {
     padding: 15px;
     margin: auto;
     border-radius: 25px;

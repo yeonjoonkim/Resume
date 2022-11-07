@@ -6,6 +6,7 @@ export interface UserRegisterForm{
    password: string;
    createdDate: Date;
    isActive: boolean;
+   uid: string;
  } 
 
  export interface UserRegisterFormValiationResult{
