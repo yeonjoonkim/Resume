@@ -10,7 +10,7 @@
 
 <!--Content-->
 <ion-content>
-    <section class="register_form">
+    <section class="form_container">
         <ion-item>
             <ion-label>Email Address</ion-label>
             <ion-input placeholder="example.sample@sample.com" type="email" [(ngModel)]="emailAddress"></ion-input>
@@ -38,5 +38,5 @@
     </section>
 
     <!--Submit Button-->
-    <ion-button class="register_submit_btn" (click)="submit()">Create Login Account</ion-button>
+    <ion-button class="form_action_btn" (click)="submit()">Create Login Account</ion-button>
 </ion-content>

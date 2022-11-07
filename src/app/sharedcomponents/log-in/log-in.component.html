@@ -1,3 +1,31 @@
-<p>
-  log-in works!
-</p>
+<!--Register Form Header-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Login Form</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!--Content-->
+<ion-content>
+    <section class="form_container">
+        <ion-item>
+            <ion-label>Email Address</ion-label>
+            <ion-input type="email" [(ngModel)]="emailAddress"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Login Using Test Account</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="isTest" (change)="setEmailAndPassword()"></ion-checkbox>
+        </ion-item>
+    </section>
+
+    <!--Submit Button-->
+    <ion-button class="form_action_btn" (click)="login()">Login</ion-button>
+
+</ion-content>

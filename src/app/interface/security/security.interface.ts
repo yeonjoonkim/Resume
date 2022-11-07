@@ -17,4 +17,4 @@ export interface AccessInfo {
     region: string;
     postal: string;
     timezone: string;
- } 
+ }

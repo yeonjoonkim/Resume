@@ -20,7 +20,6 @@ export class RegisterUserComponent implements OnInit {
   confirmPassword: string = '';
 
   constructor(private formValidation: UserFormValidationService, private modalCtrl: ModalController, private toastCtrl: ToastController, private auth: AuthService) { }
-
   ngOnInit() {}
 
   setRegisterForm(){
@@ -31,9 +30,9 @@ export class RegisterUserComponent implements OnInit {
       marketingAgreement: this.marketingAgreement,
       password: this.password,
       createdDate: new Date(),
-      isActive: true
+      isActive: true,
+      uid: ''
     };
-    
     return form;
   }
 
