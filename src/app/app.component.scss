@@ -46,14 +46,11 @@ ion-item {
 
 @media screen and (max-width: 877px) {
     .title {
-        font-size: 30px;
+        font-size: 18px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .title {
-        font-size: 18px;
-    }
     ion-icon {
         width: 18px;
         height: 18px;
