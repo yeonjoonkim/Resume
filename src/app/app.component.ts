@@ -24,6 +24,7 @@ export class AppComponent  implements OnInit {
   public activeIndex: number;
   public isAuth: boolean = false;
   public userProfile: UserRegisterForm;
+  public isRender: boolean = false;
 
   constructor(
     private readonly _security: SecurityService,
@@ -38,15 +39,16 @@ export class AppComponent  implements OnInit {
       this.setDefaultPageActivePageTitle();
       this._security.getAccessInfo();
       this.initalizeMenu();
+      this.afAuth.user.subscribe(auth => {
+        this.isAuth = (auth) ? true : false;
+        console.log(new Date())
+      });
+      this._auth.userProfile.subscribe(user => {
+        return user;
+      });
   }
 
   ngOnInit() {
-    this.afAuth.user.subscribe(auth => {
-      this.isAuth = (auth) ? true : false;
-    });
-    this._auth.userProfile.subscribe(user => {
-      this.userProfile = user;
-    });
   }
 
   /** set first default page from MenuComponents */

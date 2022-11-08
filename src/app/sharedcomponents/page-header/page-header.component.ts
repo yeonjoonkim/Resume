@@ -25,12 +25,17 @@ export class PageHeaderComponent implements OnInit {
     private afAuth: AngularFireAuth, private readonly _auth: AuthService) {
     this.menu = this._menuService.getPageComponent();
     this.owner = this._siteOwnerService.getSiteOwnerDetail();
+    this.afAuth.user.subscribe(auth => {
+      this.isAuth = (auth) ? true : false;
+    });
   }
 
   ngOnInit() {
-    this.afAuth.user.subscribe(user => {
-      this.isAuth = (user) ? true : false;
-    });
+
+  }
+
+  renderAuth(){
+
   }
 
   async openUserRegister(){

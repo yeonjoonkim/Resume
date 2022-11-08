@@ -29,16 +29,6 @@
                         <ion-icon name="{{menu.gitHub.icon}}"></ion-icon>
                     </a>
                 </li>
-                <ul class="navbar_action_btn">
-                    <li>
-                        <a *ngIf="!isAuth" (click)="openUserRegister()">Register</a>
-                        <a *ngIf="isAuth" (click)="openAccessHistoryView()">View Access History</a>
-                    </li>
-                    <li>
-                        <a *ngIf="!isAuth" (click)="openLogin()">Login</a>
-                        <a *ngIf="isAuth" (click)="logOut()">Logout</a>
-                    </li>
-                </ul>
             </ul>
         </nav>
     </ion-toolbar>
