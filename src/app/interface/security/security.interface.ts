@@ -10,6 +10,8 @@ export interface AccessInfo {
     os: string;
     userAgent: string;
     timestamp: Date;
+    date: string;
+    time: string;
  } 
  export interface IpAddress {
     ip: string;

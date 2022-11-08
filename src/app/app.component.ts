@@ -8,6 +8,7 @@ import { MenuComponent } from './interface/menu/page.interface';
 import { ModalController } from '@ionic/angular';
 import { RegisterUserComponent } from '../app/sharedcomponents/register-user/register-user.component';
 import { LogInComponent } from '../app/sharedcomponents/log-in/log-in.component';
+import { AccessHistoryComponent } from './sharedcomponents/access-history/access-history.component';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from './services/security/auth.service';
 import { UserRegisterForm } from './interface/forms/forms.interface';
@@ -82,7 +83,7 @@ export class AppComponent  implements OnInit {
 
   async openAccessHistoryView(){
     let loginComponent = await this.modalCtrl.create({
-      component: LogInComponent
+      component: AccessHistoryComponent
     });
 
     loginComponent.present();

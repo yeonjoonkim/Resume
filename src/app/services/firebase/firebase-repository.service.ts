@@ -39,5 +39,20 @@ export class FirebaseRepositoryService {
     };
     this.firestore.collection(this._userLoginHistory).ref.add(resultAction);
   }
+
+  /** This function is to get the acess history */
+  public async getAccessHistory(){
+    let accessHistory: AccessInfo[][] = [];
+    let query = this.firestore.collection<AccessInfo[]>(this._accessHistory).ref.orderBy('timestamp', 'desc');
+    await query.get().then((querySnapshot) => {
+      if(querySnapshot.empty){
+        return []
+      }else{
+        accessHistory = querySnapshot.docs.map(doc => doc.data());
+      }
+    });
+
+    return accessHistory;
+  }
   
 }

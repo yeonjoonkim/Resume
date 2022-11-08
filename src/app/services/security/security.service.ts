@@ -12,9 +12,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SecurityService {
   private readonly _ipInfoApi: string = "https://ipinfo.io/json?token=4115978389072a";
   private readonly _timeStamp: Date = new Date();
+  private readonly _timeStampStringDate = this._timeStamp.toISOString().slice(0,10)
+  private readonly _timeStampStringTime = this._timeStamp.getHours() + ":" + this._timeStamp.getMinutes() + ":"+this._timeStamp.getSeconds();
   private readonly _defaultUserAccess: AccessInfo = {
     ip: '', city: '', region: '', postal: '', timezone: '', device: '',
-    deviceType: '', browser: '', os: '', userAgent: '', timestamp: this._timeStamp,
+    deviceType: '', browser: '', os: '', userAgent: '', timestamp: this._timeStamp, date: this._timeStampStringDate, time: this._timeStampStringTime
   };
   private userAccessService: BehaviorSubject<AccessInfo> = new BehaviorSubject<AccessInfo>(this._defaultUserAccess);
   userAccess: Observable<AccessInfo> = this.userAccessService.asObservable();
@@ -50,6 +52,8 @@ export class SecurityService {
       os: device.os,
       userAgent: device.userAgent,
       timestamp: this._timeStamp,
+      date: this._timeStampStringDate, 
+      time: this._timeStampStringTime
     }
 
     return userAccess;
