@@ -1,0 +1,20 @@
+.asx-code-selection {
+    margin: 16px;
+    width: 150px;
+    height: 820px;
+    background: black;
+    --background: black;
+}
+
+ion-segment {
+    display: block;
+    ion-segment-button {
+        margin: 5px;
+        padding: 5px;
+        font-weight: 500;
+    }
+    ion-label {
+        font-size: 15px;
+        font-weight: 900;
+    }
+}

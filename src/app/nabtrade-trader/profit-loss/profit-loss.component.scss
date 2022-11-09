@@ -1,0 +1,55 @@
+ion-content {
+    --background: #303030;
+    margin: 16px;
+    width: 400px;
+    height: 820px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.statement-box {
+    display: flex;
+    justify-content: right;
+}
+
+.statement-title {
+    margin: 0;
+}
+
+.statement-value {
+    margin: 0;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.statement-expense-title,
+.statement-income-title {
+    margin: 0;
+    width: 15px;
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+}
+
+.statement-expense-title {
+    background-color: #C34A36;
+}
+
+.statement-income-title {
+    background-color: #845EC2;
+}
+
+.line {
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 15px;
+}

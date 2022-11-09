@@ -12,12 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
-    path: 'resume',
-    loadChildren: () => import('./resume/resume.module').then( m => m.ResumePageModule)
-  },
-  {
-    path: 'resume',
-    loadChildren: () => import('./resume/resume.module').then( m => m.ResumePageModule)
+    path: 'nabtrade-trader',
+    loadChildren: () => import('./nabtrade-trader/nabtrade-trader.module').then( m => m.NabtradeTraderPageModule)
   }
 ];
 

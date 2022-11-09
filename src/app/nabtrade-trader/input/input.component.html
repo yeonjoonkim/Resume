@@ -1,0 +1,13 @@
+<div class="fixed_box">
+    <div class="browse_box">
+        <ion-item>
+            <ion-label position="floating">Expense </ion-label>
+
+            <ion-input [ngModel]="expense | currency" [ngModelOptions]="{updateOn: 'blur'}" (ngModelChange)="changeExpense($event)"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Openning </ion-label>
+            <ion-input [ngModel]="openning | currency" [ngModelOptions]="{updateOn: 'blur'}" (ngModelChange)="changeOpenBal($event)"></ion-input>
+        </ion-item>
+    </div>
+</div>
