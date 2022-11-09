@@ -8,12 +8,15 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
 
+import { ChartsModule } from '@progress/kendo-angular-charts';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule,
+    ChartsModule
   ],
   declarations: [DashboardPage],
   exports: []

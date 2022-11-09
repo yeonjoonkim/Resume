@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {  IonContent, Platform } from '@ionic/angular';
+import { Series, SeriesLabels, ValueAxis } from '@progress/kendo-angular-charts';
+import { YeonJoonKimInfo } from '../interface/siteOwner/site.interface';
+import { FirebaseRepositoryService } from '../services/firebase/firebase-repository.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,40 +11,45 @@ import {  IonContent, Platform } from '@ionic/angular';
 })
 export class DashboardPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
-  loadDone = false;
-  backToTop = false;
-  info  = {
+  public loadDone = false;
+  public backToTop = false;
+  public info: YeonJoonKimInfo = {
+    completed: 'Bachelor of IT',
+    currentCompany: 'Otraco International Pty Ltd',
+    currentPosition: 'Junior Software Developer (Full Time)',
+    currentStudy: 'Master of IT (Part Time)',
+    description: 'I am currently working at Otraco International Pty Ltd as a full-time junior developer since Feb 2022 and undertaking a Master of IT at Queensland of University online as part-time to explore new challenges.',
     name: 'Yeon Joon Kim',
-    position: 'Junior Software Developer',
+    uid: ''
   };
-  selection = ['Experience', 'Education','Certification'];
-  selected = this.selection[0];
-  public experience = [
-    {
-      company: 'Prolist',
-      position: 'Internship',
-      role: 'Front End Developer',
-      suburb: 'Portsmith, QLD',
-      startDate: 'NOV 2021',
-      endDate: 'JAN 2022',
-      responsbilities: [
-        'Improved and designed new layouts to achieve usability and performance objectives.',
-        'Designed wireframes and prototypes based on goals and needs for organization.',
-        'Brought mock-ups to life with Vue, HTML, CSS and JavaScript.',
-        'Applied jQuery scripts for basic animation and end-user screen customization purposes.',
-        'Integrated backend data services to expand available resources within software.',
-        'Troubleshot, tested and remedied issues before software deployment.',
-        'Defined and conducted design processes at all stages, including research, conceptualization, testing and implementation.'
-      ],
-      hastagSkills: [
-        '#dotnet', '#angular', '#angularjs', '#api', '#javascript','#communication', '#agile'
-      ]
-    }
-  ];
-  constructor(private platform: Platform) { }
+  series: Series = {
+    type: 'column',
+    data: [70, 40, 80, 60, 50],
+    stack: true,
+    name: "Skill",
+    color: "#6D7EAA",
+    axis: "Rate"
+  }
+  axis: ValueAxis = {
+    color: "#6D7EAA",
+    min: 0,
+    max: 100,
+    name: "Rate"
+  }
+  showChartLegend = false;
+  category = ['Angular', 'SQL', 'Typescript', '.Net', 'C#']
+  public seriesLabels: SeriesLabels = {
+    visible: true,
+    padding: 3,
+    font: "bold 15px Arial, sans-serif",
+  };
+  constructor(private platform: Platform, private fireRepo: FirebaseRepositoryService) {
+    this.fireRepo.getYeonJoonKimData().then(result => {
+      this.info = result;
+    });
+  }
 
   ngOnInit() {
-
   }
 
   ionViewDidEnter() {

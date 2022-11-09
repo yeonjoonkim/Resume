@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../../services/system/menu.service';
 import { MenuComponent } from 'src/app/interface/menu/page.interface';
-import { SiteOwner } from 'src/app/interface/siteOwner/security.interface';
+import { SiteOwner } from 'src/app/interface/siteOwner/site.interface';
 import { SiteOwnerService } from 'src/app/services/system/site-owner.service';
 
 @Component({

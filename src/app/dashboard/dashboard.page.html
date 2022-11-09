@@ -1,26 +1,53 @@
-<ion-content [scrollEvents]="true" (ionScroll)="getScrollPos($event.detail.scrollTop)">
+<ion-content [scrollEvents]="true">
     <div class="background">
         <main class="main">
             <div id="container">
                 <div class="left" [ngClass]="loadDone ? 'left_right' : ''">
+                    <kendo-chart>
+                        <kendo-chart-legend [visible]="showChartLegend"></kendo-chart-legend>
+                        <kendo-chart-value-axis>
+                            <kendo-chart-value-axis-item [name]="axis.name" [color]="axis.color" [min]="axis.min" [max]="axis.max">
+                            </kendo-chart-value-axis-item>
 
+                            <kendo-chart-category-axis>
+                                <kendo-chart-category-axis-item [categories]="category"></kendo-chart-category-axis-item>
+                            </kendo-chart-category-axis>
+                        </kendo-chart-value-axis>
+                        <kendo-chart-series>
+                            <kendo-chart-series-item [labels]="seriesLabels" [name]="series.name" [data]="series.data" [color]="series.color" [axis]="series.axis" [stack]="series.stack">
+
+                            </kendo-chart-series-item>
+                        </kendo-chart-series>
+                    </kendo-chart>
                 </div>
                 <div class="right" [ngClass]="loadDone ? 'right_left' : ''">
                     <div id="content">
                         <h1>{{info.name}}</h1>
-                        <p id="occupation">{{info.position}}</p>
-                        <p>
-                            I am currently undertaking a Bachelor of Information Technology at James Cook University, Cairns with an expected graduation date of Febuary 2022. From the comprehensive coursework, I have gained knowledge and a strong foundation in system administration,
-                            computer architecture, ethics in information systems, system analysis, and design. The coursework empowers me to play a support role in meeting the computing needs of non-technical staff. Furthermore, I also hold diploma in
-                            Business from the Holmes Institute, Cairns respectively.
+                        <p id="occupation"><b>Company Name | </b>{{info.currentCompany}}</p>
+                        <p id="occupation"><b>Current Position | </b>{{info.currentPosition}}</p>
+                        <p id="occupation"><b>Current Study | </b>{{info.currentStudy}}</p>
+
+                        <p id="description">
+                            {{info.description}}
                         </p>
+                        <div class="button_container">
+                            <div class="skill workExperience">
+                                <p>Work Experience</p>
+                            </div>
+                            <div class="skill education">
+                                <p>Education</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <section class="hastag_container">
+            <div class="skill_box" [ngClass]="loadDone ? 'up' : ''">
+            </div>
+        </section>
     </div>
-    <section class="hastag_container">
-        <div class="skill_box"> </div>
-    </section>
+
 
 </ion-content>

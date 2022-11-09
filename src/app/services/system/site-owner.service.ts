@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SiteOwner } from '../../interface/siteOwner/security.interface';
+import { SiteOwner } from '../../interface/siteOwner/site.interface';
 @Injectable({
   providedIn: 'root'
 })
