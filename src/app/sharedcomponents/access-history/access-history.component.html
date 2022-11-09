@@ -1,3 +1,67 @@
-<p>
-  access-history works!
-</p>
+<!--Access History Header-->
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Access History</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+        </ion-buttons>
+
+    </ion-toolbar>
+    <div class="access_hisotry_search_container">
+        <ion-toolbar>
+            <ion-searchbar class="search_bar" animate='true' [(ngModel)]="searchQuery" placeholder="Search Details" showCancelButton="focus" animated="true"></ion-searchbar>
+        </ion-toolbar>
+    </div>
+    <ion-list>
+        <ion-item class="access_hisotry_title">
+            <ion-label>
+                Date
+            </ion-label>
+            <ion-label>
+                Time
+            </ion-label>
+            <ion-label>
+                IP Address
+            </ion-label>
+            <ion-label>
+                City
+            </ion-label>
+            <ion-label>
+                Device
+            </ion-label>
+            <ion-label>
+                Device Type
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-header>
+
+<ion-content class="access_hisotry_container">
+
+    <ion-infinite-scroll>
+        <ion-list *ngFor="let history of historyResult | filter: searchQuery">
+
+            <ion-item class="access_history_container">
+                <ion-label>
+                    {{history.timestamp.toDate() | date: 'dd/MM/yy'}}
+                </ion-label>
+                <ion-label>
+                    {{history.timestamp.toDate() | date: 'h:mm a'}}
+                </ion-label>
+                <ion-label>
+                    {{history.ip}}
+                </ion-label>
+                <ion-label>
+                    {{history.city}}
+                </ion-label>
+                <ion-label>
+                    {{history.device}}
+                </ion-label>
+                <ion-label>
+                    {{history.deviceType}}
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-infinite-scroll>
+
+</ion-content>

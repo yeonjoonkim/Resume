@@ -1,3 +1,26 @@
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="getScrollPos($event.detail.scrollTop)">
+    <div class="background">
+        <main class="main">
+            <div id="container">
+                <div class="left" [ngClass]="loadDone ? 'left_right' : ''">
+
+                </div>
+                <div class="right" [ngClass]="loadDone ? 'right_left' : ''">
+                    <div id="content">
+                        <h1>{{info.name}}</h1>
+                        <p id="occupation">{{info.position}}</p>
+                        <p>
+                            I am currently undertaking a Bachelor of Information Technology at James Cook University, Cairns with an expected graduation date of Febuary 2022. From the comprehensive coursework, I have gained knowledge and a strong foundation in system administration,
+                            computer architecture, ethics in information systems, system analysis, and design. The coursework empowers me to play a support role in meeting the computing needs of non-technical staff. Furthermore, I also hold diploma in
+                            Business from the Holmes Institute, Cairns respectively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <section class="hastag_container">
+        <div class="skill_box"> </div>
+    </section>
 
 </ion-content>

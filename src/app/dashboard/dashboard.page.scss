@@ -1,0 +1,185 @@
+main {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    background: #D4EDEA;
+    min-height: 800px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    background: #D4EDEA;
+}
+
+#container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container h1 {
+    font-size: 40px;
+    color: white;
+}
+
+#container p {
+    color: white;
+    margin: 20px 0px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+#occupation {
+    font-size: 20px;
+    color: white;
+}
+
+.left {
+    width: 60%;
+    height: 500px;
+    border-radius: 8px;
+    transform: translateX(-150px);
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+.left_right {
+    transform: translateX(0px);
+    transition: all 1s;
+    opacity: 1;
+}
+
+.right {
+    width: 70%;
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    background-color: #3C4856;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 8px;
+    opacity: 0;
+    margin-left: 20px;
+    transform: translateX(150px);
+    transition: all 1s;
+}
+
+.right_left {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.right p {
+    font-size: 16px;
+}
+
+.hastag_container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    background: #D4EDEA;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill_box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+    transform: translateY(150px);
+    min-height: 300px;
+}
+
+.up {
+    transform: translateY(0px);
+    transition: all 1s;
+    opacity: 1;
+}
+
+.skill {
+    color: white;
+    padding: 0px 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.http {
+    background: #6A9DB0;
+}
+
+.typescript {
+    background: #6D7EAA;
+}
+
+.css {
+    background: #7B6C9B;
+}
+
+.angular {
+    background: #8F4766;
+}
+
+.vue {
+    background: #885984;
+}
+
+.java {
+    background: #6D7EAA;
+}
+
+.python {
+    background: #658FB0;
+}
+
+@media screen and (max-width: 877px) {
+    .left {
+        height: 100px;
+        margin-right: 50px;
+    }
+    main {
+        min-height: 50vh;
+    }
+    #container {
+        flex-direction: column;
+        width: 100%;
+        margin: 50px 10px;
+    }
+    .left {
+        width: 100%;
+        height: 400px;
+        margin-top: 50px
+    }
+    .right {
+        width: 100%;
+        margin: 0;
+        margin-top: -50px;
+    }
+    .skill_box {
+        width: 100%;
+        padding-bottom: 100px;
+    }
+    #hastag_container {
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 477px) {
+    .left {
+        width: 100%;
+        height: 400px;
+    }
+    .right {
+        margin-top: -10px;
+    }
+}
