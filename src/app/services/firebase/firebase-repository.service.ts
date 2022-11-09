@@ -46,7 +46,7 @@ export class FirebaseRepositoryService {
   /** This function is to get the acess history */
   public async getAccessHistory(){
     let accessHistory: AccessInfo[][] = [];
-    let query = this.firestore.collection<AccessInfo[]>(this._yeonJoonKim).ref.orderBy('timestamp', 'desc');
+    let query = this.firestore.collection<AccessInfo[]>(this._accessHistory).ref.orderBy('timestamp', 'desc');
     await query.get().then((querySnapshot) => {
       if(querySnapshot.empty){
         return []
@@ -55,6 +55,7 @@ export class FirebaseRepositoryService {
       }
     });
 
+    console.log(accessHistory)
     return accessHistory;
   }
   /** This function is to get yeon joon kim's information */
@@ -70,7 +71,6 @@ export class FirebaseRepositoryService {
         })
       }
     });
-    console.log(yeonjoonkim)
     return yeonjoonkim;
   }
   

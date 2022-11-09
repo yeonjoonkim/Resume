@@ -45,7 +45,6 @@ export class AppComponent  implements OnInit {
       this.initalizeMenu();
       this.afAuth.user.subscribe(auth => {
         this.isAuth = (auth) ? true : false;
-        console.log(new Date())
       });
       this._auth.userProfile.subscribe(user => {
         return user;

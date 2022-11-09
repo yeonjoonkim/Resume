@@ -1,16 +1,18 @@
+<app-page-header></app-page-header>
 <ion-content [scrollEvents]="true">
+
     <div class="background">
         <main class="main">
             <div id="container">
                 <div class="left" [ngClass]="loadDone ? 'left_right' : ''">
                     <kendo-chart>
-                        <kendo-chart-legend [visible]="showChartLegend"></kendo-chart-legend>
+                        <kendo-chart-legend [visible]="showChartLegend" position="bottom"></kendo-chart-legend>
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item [name]="axis.name" [color]="axis.color" [min]="axis.min" [max]="axis.max">
                             </kendo-chart-value-axis-item>
 
                             <kendo-chart-category-axis>
-                                <kendo-chart-category-axis-item [categories]="category"></kendo-chart-category-axis-item>
+                                <kendo-chart-category-axis-item [categories]="category" [labels]="categoryLabel"></kendo-chart-category-axis-item>
                             </kendo-chart-category-axis>
                         </kendo-chart-value-axis>
                         <kendo-chart-series>
@@ -31,10 +33,10 @@
                             {{info.description}}
                         </p>
                         <div class="button_container">
-                            <div class="skill workExperience" (click)="openWorkExperience()">
+                            <div class="skill workExperience" style="cursor: pointer" (click)="openWorkExperience()">
                                 <p>Work Experience</p>
                             </div>
-                            <div class="skill education" (click)="openEducation()">
+                            <div class="skill education" style="cursor: pointer" (click)="openEducation()">
                                 <p>Education</p>
                             </div>
                         </div>
@@ -42,12 +44,6 @@
                 </div>
             </div>
         </main>
-
-        <section class="hastag_container">
-            <div class="skill_box" [ngClass]="loadDone ? 'up' : ''">
-            </div>
-        </section>
     </div>
-
-
+    <app-page-footer></app-page-footer>
 </ion-content>

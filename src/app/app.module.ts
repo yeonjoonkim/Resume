@@ -35,8 +35,6 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { AccessHistoryComponent } from './sharedcomponents/access-history/access-history.component';
 import { LogInComponent } from './sharedcomponents/log-in/log-in.component';
 import { RegisterUserComponent } from './sharedcomponents/register-user/register-user.component';
-import { PageHeaderComponent } from './sharedcomponents/page-header/page-header.component';
-import { PageFooterComponent } from './sharedcomponents/page-footer/page-footer.component';
 import { EducationComponent } from './sharedcomponents/education/education.component';
 import { WorkExperienceComponent } from './sharedcomponents/work-experience/work-experience.component';
 
@@ -47,13 +45,9 @@ import { WorkExperienceComponent } from './sharedcomponents/work-experience/work
     AccessHistoryComponent, 
     LogInComponent, 
     RegisterUserComponent, 
-    PageHeaderComponent,
-    PageFooterComponent,
     AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
-      PageHeaderComponent,
-      PageFooterComponent,
       EducationComponent,
       WorkExperienceComponent
   ],
@@ -81,8 +75,6 @@ import { WorkExperienceComponent } from './sharedcomponents/work-experience/work
       AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
-      PageHeaderComponent,
-      PageFooterComponent,
       EducationComponent,
       WorkExperienceComponent,
       FormsModule],

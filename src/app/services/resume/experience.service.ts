@@ -15,9 +15,9 @@ export class ExperienceService {
       responsbilities: [
         'Modify, repair, or expand existing programs to correct errors, increase efficiency, upgrade interfaces, or improve performance.',
         'Design and develop back end Microsoft C# logic.',
-        'Design and develop front end Angular web logic',
-        'Design and develop back end Microsoft SQL Server database objects',
-        'Identify technical issues with the software and communicate them effectively',
+        'Design and develop front end Angular web logic.',
+        'Design and develop back end Microsoft SQL Server database objects.',
+        'Identify technical issues with the software and communicate them effectively.',
         'Assisting the manager with aspects of software design and coding.',
         'Participate in daily Scrum meetings.',
       ],

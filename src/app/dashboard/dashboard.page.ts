@@ -17,7 +17,7 @@ export class DashboardPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
   public info: YeonJoonKimInfo = {
     completed: 'Bachelor of IT',
-    currentCompany: 'Otraco International Pty Ltd',
+    currentCompany: 'Otraco International',
     currentPosition: 'Junior Software Developer (Full Time)',
     currentStudy: 'Master of IT (Part Time)',
     description: 'I am currently working at Otraco International Pty Ltd as a full-time junior developer since Feb 2022 and undertaking a Master of IT at Queensland of University online as part-time to explore new challenges.',
@@ -28,7 +28,7 @@ export class DashboardPage implements OnInit {
     type: 'column',
     data: [70, 40, 80, 60, 50],
     stack: true,
-    name: "Skill",
+    name: "Rate",
     color: "#6D7EAA",
     axis: "Rate"
   }
@@ -38,13 +38,17 @@ export class DashboardPage implements OnInit {
     max: 100,
     name: "Rate"
   }
-  public seriesLabels: SeriesLabels = {
+  public seriesLabels = {
     visible: true,
-    padding: 3,
-    font: "bold 15px Arial, sans-serif",
+    font: "bold 13px Arial, sans-serif", 
+    format: "{0}%"
   };
-  public showChartLegend = false;
-  public category = ['Angular', 'SQL', 'Typescript', '.Net', 'C#'];
+  public categoryLabel = {
+    visible: true,
+    font: "bold 13px Arial, sans-serif",
+  };
+  public showChartLegend = true;
+  public category = ['Angular', 'SQL', 'Typescript', 'Git', 'C#'];
   public loadDone = false;
   public backToTop = false;
 

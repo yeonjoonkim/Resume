@@ -1,3 +1,30 @@
-<p>
-  work-experience works!
-</p>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Work Experience</ion-title>
+        <ion-buttons slot="end" style="cursor: pointer">
+            <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-conent class="work_experience_container">
+
+    <ion-card class="epx_card" *ngFor="let exp of experience">
+        <ion-card-header>
+            <ion-card-title>{{exp.role}}</ion-card-title>
+            <ion-card-subtitle>{{exp.company}} - {{exp.position}} </ion-card-subtitle>
+            <ion-card-subtitle>{{exp.startDate}} - {{exp.endDate}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <div id="res">
+                <ul *ngFor="let resp of exp.responsbilities">
+                    <li>{{resp}}</li>
+                </ul>
+            </div>
+            <div id="exp_hastag">
+                <div *ngFor="let tag of exp.hastagSkills">
+                    <p>{{tag}}</p>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-conent>
