@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
-
 //Side Bar
 import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 //Firebase Moudles
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -68,8 +68,12 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     BrowserAnimationsModule, 
     BarcodesModule, 
     ChartsModule, 
-    ScrollViewModule, InputsModule],
-    exports: [AccessHistoryComponent, 
+    ScrollViewModule, 
+    InputsModule,
+    Ng2SearchPipeModule
+    ],
+    exports: [
+      AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
       PageHeaderComponent,
