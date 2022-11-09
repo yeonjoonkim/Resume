@@ -1,18 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {  IonContent, Platform } from '@ionic/angular';
+import {  IonContent } from '@ionic/angular';
 import { Series, SeriesLabels, ValueAxis } from '@progress/kendo-angular-charts';
 import { YeonJoonKimInfo } from '../interface/siteOwner/site.interface';
 import { FirebaseRepositoryService } from '../services/firebase/firebase-repository.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
+
 export class DashboardPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
-  public loadDone = false;
-  public backToTop = false;
   public info: YeonJoonKimInfo = {
     completed: 'Bachelor of IT',
     currentCompany: 'Otraco International Pty Ltd',
@@ -36,14 +36,18 @@ export class DashboardPage implements OnInit {
     max: 100,
     name: "Rate"
   }
-  showChartLegend = false;
-  category = ['Angular', 'SQL', 'Typescript', '.Net', 'C#']
   public seriesLabels: SeriesLabels = {
     visible: true,
     padding: 3,
     font: "bold 15px Arial, sans-serif",
   };
-  constructor(private platform: Platform, private fireRepo: FirebaseRepositoryService) {
+  public showChartLegend = false;
+  public category = ['Angular', 'SQL', 'Typescript', '.Net', 'C#'];
+  public loadDone = false;
+  public backToTop = false;
+
+
+  constructor(private fireRepo: FirebaseRepositoryService, private modalCtrl: ModalController) {
     this.fireRepo.getYeonJoonKimData().then(result => {
       this.info = result;
     });
@@ -58,14 +62,20 @@ export class DashboardPage implements OnInit {
     }, 500);
   }
 
-  getScrollPos(pos: number) {
-    if (pos > this.platform.height()) {
-         this.backToTop = true;
-    } else {
-         this.backToTop = false;
+  openWorkExperience(){
+  //  let loginComponent = await this.modalCtrl.create({
+  //    component: AccessHistoryComponent
+  //  });
+
+  //  loginComponent.present();
+  }
+
+  openEducation(){
+    //  let loginComponent = await this.modalCtrl.create({
+    //    component: AccessHistoryComponent
+    //  });
+  
+    //  loginComponent.present();
     }
-  }
-  gotToTop() {
-    this.content.scrollToTop(1000);
-  }
+
 }
