@@ -1,0 +1,129 @@
+<ion-content class="a4-paper">
+    <h1>{{duration}}</h1>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-income-title">+</p>
+                <h4 class="statement-title"> Total Sold</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.sell | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-expense-title">-</p>
+                <h4 class="statement-title">Total Purchase </h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.purchase | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-expense-title">-</p>
+                <h4 class="statement-title">Brokerage Fee</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value"> {{summary.brokerage | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-expense-title">-</p>
+                <h4 class="statement-title">Other Fee</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.other_fee | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-expense-title">-</p>
+                <h4 class="statement-title">Opening Stock</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.opening | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-income-title">+</p>
+                <h4 class="statement-title"> Closing Stock</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.closing | currency}}</h4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div class="line"></div>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="statement-box">
+                <h4 class="statement-title">Stock Profit & Loss</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{summary.share_pnl | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-income-title">+</p>
+                <h4 class="statement-title"> Other Income</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{overall.otherIncome | currency}}</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="statement-box">
+                <p class="statement-expense-title">-</p>
+                <h4 class="statement-title">Other Expense </h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{overall.expense | currency}}</h4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div class="line"></div>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="statement-box">
+                <h4 class="statement-title">Total Profit & Loss</h4>
+            </ion-col>
+            <ion-col>
+                <h4 class="statement-value">{{overall.totalPnl | currency}}</h4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ng-container *ngIf="tax.turn">
+        <div class="line"></div>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="statement-box">
+                    <h4 class="statement-title">Tax Rate</h4>
+                </ion-col>
+                <ion-col>
+                    <h4 class="statement-value">{{tax.rate * 100}}%</h4>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="statement-box">
+                    <h4 class="statement-title">Tax Payment</h4>
+                </ion-col>
+                <ion-col>
+                    <h4 class="statement-value">{{tax.payment | currency}}</h4>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="statement-box">
+                    <h4 class="statement-title">After Tax</h4>
+                </ion-col>
+                <ion-col>
+                    <h4 class="statement-value">{{tax.net | currency}}</h4>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ng-container>
+</ion-content>

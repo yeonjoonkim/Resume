@@ -1,0 +1,28 @@
+ion-toolbar {
+    --background: black;
+    ion-buttons {
+        font-size: 20px;
+        color: red;
+    }
+    ion-title {
+        font-size: 20px;
+        color: red;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    width: 200px;
+    text-align: center;
+    p {
+        background-color: darkcyan;
+        font-size: 18px;
+        color: white;
+        padding: 20px;
+        font-weight: 900;
+    }
+    cursor: pointer;
+}

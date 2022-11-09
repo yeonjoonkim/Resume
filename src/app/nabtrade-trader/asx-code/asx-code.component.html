@@ -1,0 +1,8 @@
+<ion-content class="asx-code-selection">
+
+    <ion-segment *ngFor="let code of asxcode" [(ngModel)]="selectedCode">
+        <ion-segment-button value="{{code}}" (click)="codeChange()">
+            <ion-label>{{code}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-content>

@@ -1,0 +1,39 @@
+ion-content {
+    --background: #474554;
+    margin: 16px;
+    width: 750px;
+    height: 820px;
+}
+
+h4 {
+    color: #C8FCEA;
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.purchase-title {
+    color: #F08F7B;
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.row-title ion-col {
+    font-weight: 900;
+    text-align: center;
+}
+
+.seg-container {
+    display: inline-block;
+    width: 30%;
+    justify-content: center;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}

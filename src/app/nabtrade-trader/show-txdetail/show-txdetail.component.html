@@ -1,0 +1,124 @@
+<ion-content>
+    <ng-container *ngFor="let tx of detail; let i = index">
+        <h4 id="title" *ngIf="i === 0">{{tx.description}}</h4>
+    </ng-container>
+    <div class="box">
+        <ion-segment class="seg-container" *ngFor="let seg of segmentValue" [(ngModel)]="selectedSegment" color="medium">
+            <ion-segment-button value="{{seg.value}}">
+                <ion-label>{{seg.text}}</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+    </div>
+    <div *ngIf="selectedSegment === 'BUY'">
+        <ng-container class="tx-container" *ngFor="let tx of detail; let i = index">
+            <h5 *ngIf="i === 0" class="purchase-title">Purchase</h5>
+            <ion-list *ngIf="i === 0">
+                <ion-item class="row-title">
+                    <ion-label>
+                        Date
+                    </ion-label>
+                    <ion-label>
+                        Action
+                    </ion-label>
+                    <ion-label>
+                        Avg.Price
+                    </ion-label>
+                    <ion-label>
+                        Quantity
+                    </ion-label>
+                    <ion-label>
+                        Value
+                    </ion-label>
+                    <ion-label>
+                        Brokerage
+                    </ion-label>
+                    <ion-label>
+                        Settlement
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+            <div *ngIf="tx.movement_type ==='BUY'">
+                <ion-item>
+                    <ion-label>
+                        {{tx.date | date: 'dd/MM/yy'}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.movement_type}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.avg_price | currency:'AUD':'symbol-narrow' :'1.1-3'}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.quantity}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.value | currency}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.brokerage + tx.other_fee | currency}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.settlement | currency}}
+                    </ion-label>
+                </ion-item>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="selectedSegment === 'SELL'">
+        <ng-container class="tx-container" *ngFor="let tx of detail; let i = index">
+            <h5 *ngIf="i === 0" class="purchase-title">SOLD</h5>
+            <ion-list *ngIf="i === 0">
+                <ion-item class="row-title">
+                    <ion-label>
+                        Date
+                    </ion-label>
+                    <ion-label>
+                        Action
+                    </ion-label>
+                    <ion-label>
+                        Avg.Price
+                    </ion-label>
+                    <ion-label>
+                        Quantity
+                    </ion-label>
+                    <ion-label>
+                        Value
+                    </ion-label>
+                    <ion-label>
+                        Brokerage
+                    </ion-label>
+                    <ion-label>
+                        Settlement
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+            <div *ngIf="tx.movement_type ==='SELL'">
+
+                <ion-item>
+                    <ion-label>
+                        {{tx.date | date: 'dd/MM/yy'}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.movement_type}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.avg_price | currency}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.quantity}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.value | currency}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.brokerage + tx.other_fee | currency}}
+                    </ion-label>
+                    <ion-label>
+                        {{tx.settlement | currency}}
+                    </ion-label>
+                </ion-item>
+            </div>
+        </ng-container>
+    </div>
+</ion-content>

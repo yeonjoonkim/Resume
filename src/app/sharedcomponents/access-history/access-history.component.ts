@@ -10,7 +10,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class AccessHistoryComponent implements OnInit {
   public historyResult: AccessInfo[][];
-  public searchQuery: string = '';
+  public searchQuery: any;
 
   constructor(private fireRepo: FirebaseRepositoryService, private modalCtrl: ModalController) { }
 
