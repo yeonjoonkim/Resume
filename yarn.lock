@@ -2259,12 +2259,12 @@
     "@progress/kendo-schematics" "^3.0.0"
     "tslib" "^2.3.1"
 
-"@progress/kendo-angular-charts@^7.3.0":
-  "integrity" "sha512-zPB3LtAcvCs+pkPhS0IdHbpTOQSL6pASjrVRqqXpSY+gsLf6qmOrPKOqu5P2iT3PsCttlIL2F3WfuS/HNUo6aA=="
-  "resolved" "https://registry.npmjs.org/@progress/kendo-angular-charts/-/kendo-angular-charts-7.3.0.tgz"
-  "version" "7.3.0"
+"@progress/kendo-angular-charts@^7.3.1":
+  "integrity" "sha512-u7ip7Q2hNIb+CQVOFJiKH/i9/Sdq28PuKsxlvVmnnfdyLAoTOSuXfjyBhplu2EPLiejurF9wP7rM6rxy8q6QyA=="
+  "resolved" "https://registry.npmjs.org/@progress/kendo-angular-charts/-/kendo-angular-charts-7.3.1.tgz"
+  "version" "7.3.1"
   dependencies:
-    "@progress/kendo-charts" "^1.26.0"
+    "@progress/kendo-charts" "^1.26.1"
     "@progress/kendo-schematics" "^3.0.0"
     "tslib" "^2.3.1"
 
@@ -2341,10 +2341,10 @@
     "@progress/kendo-schematics" "^3.0.0"
     "tslib" "^2.3.1"
 
-"@progress/kendo-charts@^1.23.0", "@progress/kendo-charts@^1.26.0":
-  "integrity" "sha512-Xww1qS0tASzgddolJiJhQMUJLqdnbtdW4N8zi1yioEXpORDj0JulI3hGnYTOYlhanUgh+eKJK8JGOoN47Q11mg=="
-  "resolved" "https://registry.npmjs.org/@progress/kendo-charts/-/kendo-charts-1.26.0.tgz"
-  "version" "1.26.0"
+"@progress/kendo-charts@^1.23.0", "@progress/kendo-charts@^1.26.1":
+  "integrity" "sha512-UayS73OwBBP0R8HA0P1j9HfLDx8hsyQNO7hjLoLe0TT7skiA8ao5YM1etWzMf3aHlWwQFA2CVNHi6zdfBrkaYQ=="
+  "resolved" "https://registry.npmjs.org/@progress/kendo-charts/-/kendo-charts-1.26.1.tgz"
+  "version" "1.26.1"
 
 "@progress/kendo-common@^0.2.0", "@progress/kendo-common@^0.2.1", "@progress/kendo-common@^0.2.2":
   "integrity" "sha512-VwHyVXJ5o92pnljtmIULYVYUhyY9BXaPVTjLNMOc5MuYr2PU4tmpyzfJI/MeyfL1PuHJlgw7KqJJhvPqrOduNQ=="

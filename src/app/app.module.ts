@@ -29,14 +29,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarcodesModule } from '@progress/kendo-angular-barcodes';
 import { ChartsModule } from '@progress/kendo-angular-charts';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { InputsModule } from '@progress/kendo-angular-inputs';
 
 //Import Shared Components
 import { AccessHistoryComponent } from './sharedcomponents/access-history/access-history.component';
 import { LogInComponent } from './sharedcomponents/log-in/log-in.component';
 import { RegisterUserComponent } from './sharedcomponents/register-user/register-user.component';
-import { PageHeaderComponent } from './sharedcomponents/page-header/page-header.component';
-import { PageFooterComponent } from './sharedcomponents/page-footer/page-footer.component';
-import { InputsModule } from '@progress/kendo-angular-inputs';
+import { EducationComponent } from './sharedcomponents/education/education.component';
+import { WorkExperienceComponent } from './sharedcomponents/work-experience/work-experience.component';
+
 
 @NgModule({
   declarations: [
@@ -44,13 +45,11 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     AccessHistoryComponent, 
     LogInComponent, 
     RegisterUserComponent, 
-    PageHeaderComponent,
-    PageFooterComponent,
     AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
-      PageHeaderComponent,
-      PageFooterComponent 
+      EducationComponent,
+      WorkExperienceComponent
   ],
   imports: [
     HttpClientModule,
@@ -76,9 +75,9 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
       AccessHistoryComponent, 
       LogInComponent, 
       RegisterUserComponent, 
-      PageHeaderComponent,
-      PageFooterComponent,
-      FormsModule ],
+      EducationComponent,
+      WorkExperienceComponent,
+      FormsModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [

@@ -12,6 +12,9 @@ import { AccessHistoryComponent } from './sharedcomponents/access-history/access
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from './services/security/auth.service';
 import { UserRegisterForm } from './interface/forms/forms.interface';
+import { EducationComponent } from './sharedcomponents/education/education.component';
+import { WorkExperienceComponent } from './sharedcomponents/work-experience/work-experience.component';
+
 
 
 @Component({
@@ -42,7 +45,6 @@ export class AppComponent  implements OnInit {
       this.initalizeMenu();
       this.afAuth.user.subscribe(auth => {
         this.isAuth = (auth) ? true : false;
-        console.log(new Date())
       });
       this._auth.userProfile.subscribe(user => {
         return user;
@@ -92,5 +94,21 @@ export class AppComponent  implements OnInit {
   async logOut(){
     this._auth.logout();
   }
+
+  async openWorkExperience(){
+    let workExperienceComponent = await this.modalCtrl.create({
+      component: WorkExperienceComponent
+    });
+
+    workExperienceComponent.present();
+  }
+
+  async openEducation(){
+    let educationComponent = await this.modalCtrl.create({
+        component: EducationComponent
+      });
+  
+      educationComponent.present();
+    }
 
 }

@@ -2,7 +2,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>Login Form</ion-title>
-        <ion-buttons slot="end">
+        <ion-buttons slot="end" style="cursor: pointer">
             <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
         </ion-buttons>
     </ion-toolbar>
@@ -20,8 +20,8 @@
             <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label>Login Using Test Account</ion-label>
-            <ion-checkbox slot="end" [(ngModel)]="isTest" (change)="setEmailAndPassword()"></ion-checkbox>
+            <ion-label>Login As Test Account</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="isTest" (ngModelChange)="setEmailAndPassword()"></ion-checkbox>
         </ion-item>
     </section>
 

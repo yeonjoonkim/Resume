@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import { PageHeaderComponent } from '../sharedcomponents/page-header/page-header.component';
+import { PageFooterComponent } from '../sharedcomponents/page-footer/page-footer.component';
 
 @NgModule({
   imports: [
@@ -14,8 +17,10 @@ import { DashboardPage } from './dashboard.page';
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule,
+    ChartsModule,
+    
   ],
-  declarations: [DashboardPage],
+  declarations: [DashboardPage, PageHeaderComponent, PageFooterComponent],
   exports: []
 })
 export class DashboardPageModule {}

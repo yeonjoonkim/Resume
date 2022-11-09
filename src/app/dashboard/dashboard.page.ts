@@ -1,47 +1,65 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {  IonContent, Platform } from '@ionic/angular';
+import {  IonContent } from '@ionic/angular';
+import { Series, SeriesLabels, ValueAxis } from '@progress/kendo-angular-charts';
+import { YeonJoonKimInfo } from '../interface/siteOwner/site.interface';
+import { FirebaseRepositoryService } from '../services/firebase/firebase-repository.service';
+import { ModalController } from '@ionic/angular';
+import { EducationComponent } from '../sharedcomponents/education/education.component';
+import { WorkExperienceComponent } from '../sharedcomponents/work-experience/work-experience.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
+
 export class DashboardPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
-  loadDone = false;
-  backToTop = false;
-  info  = {
+  public info: YeonJoonKimInfo = {
+    completed: 'Bachelor of IT',
+    currentCompany: 'Otraco International',
+    currentPosition: 'Junior Software Developer (Full Time)',
+    currentStudy: 'Master of IT (Part Time)',
+    description: 'I am currently working at Otraco International Pty Ltd as a full-time junior developer since Feb 2022 and undertaking a Master of IT at Queensland of University online as part-time to explore new challenges.',
     name: 'Yeon Joon Kim',
-    position: 'Junior Software Developer',
+    uid: ''
   };
-  selection = ['Experience', 'Education','Certification'];
-  selected = this.selection[0];
-  public experience = [
-    {
-      company: 'Prolist',
-      position: 'Internship',
-      role: 'Front End Developer',
-      suburb: 'Portsmith, QLD',
-      startDate: 'NOV 2021',
-      endDate: 'JAN 2022',
-      responsbilities: [
-        'Improved and designed new layouts to achieve usability and performance objectives.',
-        'Designed wireframes and prototypes based on goals and needs for organization.',
-        'Brought mock-ups to life with Vue, HTML, CSS and JavaScript.',
-        'Applied jQuery scripts for basic animation and end-user screen customization purposes.',
-        'Integrated backend data services to expand available resources within software.',
-        'Troubleshot, tested and remedied issues before software deployment.',
-        'Defined and conducted design processes at all stages, including research, conceptualization, testing and implementation.'
-      ],
-      hastagSkills: [
-        '#dotnet', '#angular', '#angularjs', '#api', '#javascript','#communication', '#agile'
-      ]
-    }
-  ];
-  constructor(private platform: Platform) { }
+  series: Series = {
+    type: 'column',
+    data: [70, 40, 80, 60, 50],
+    stack: true,
+    name: "Rate",
+    color: "#6D7EAA",
+    axis: "Rate"
+  }
+  axis: ValueAxis = {
+    color: "#6D7EAA",
+    min: 0,
+    max: 100,
+    name: "Rate"
+  }
+  public seriesLabels = {
+    visible: true,
+    font: "bold 13px Arial, sans-serif", 
+    format: "{0}%"
+  };
+  public categoryLabel = {
+    visible: true,
+    font: "bold 13px Arial, sans-serif",
+  };
+  public showChartLegend = true;
+  public category = ['Angular', 'SQL', 'Typescript', 'Git', 'C#'];
+  public loadDone = false;
+  public backToTop = false;
+
+
+  constructor(private fireRepo: FirebaseRepositoryService, private modalCtrl: ModalController) {
+    this.fireRepo.getYeonJoonKimData().then(result => {
+      this.info = result;
+    });
+  }
 
   ngOnInit() {
-
   }
 
   ionViewDidEnter() {
@@ -50,14 +68,20 @@ export class DashboardPage implements OnInit {
     }, 500);
   }
 
-  getScrollPos(pos: number) {
-    if (pos > this.platform.height()) {
-         this.backToTop = true;
-    } else {
-         this.backToTop = false;
+  async openWorkExperience(){
+    let workExperienceComponent = await this.modalCtrl.create({
+      component: WorkExperienceComponent
+    });
+
+    workExperienceComponent.present();
+  }
+
+  async openEducation(){
+    let educationComponent = await this.modalCtrl.create({
+        component: EducationComponent
+      });
+  
+      educationComponent.present();
     }
-  }
-  gotToTop() {
-    this.content.scrollToTop(1000);
-  }
+
 }
