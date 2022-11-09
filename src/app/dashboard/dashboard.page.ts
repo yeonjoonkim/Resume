@@ -4,6 +4,8 @@ import { Series, SeriesLabels, ValueAxis } from '@progress/kendo-angular-charts'
 import { YeonJoonKimInfo } from '../interface/siteOwner/site.interface';
 import { FirebaseRepositoryService } from '../services/firebase/firebase-repository.service';
 import { ModalController } from '@ionic/angular';
+import { EducationComponent } from '../sharedcomponents/education/education.component';
+import { WorkExperienceComponent } from '../sharedcomponents/work-experience/work-experience.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -62,20 +64,20 @@ export class DashboardPage implements OnInit {
     }, 500);
   }
 
-  openWorkExperience(){
-  //  let loginComponent = await this.modalCtrl.create({
-  //    component: AccessHistoryComponent
-  //  });
+  async openWorkExperience(){
+    let workExperienceComponent = await this.modalCtrl.create({
+      component: WorkExperienceComponent
+    });
 
-  //  loginComponent.present();
+    workExperienceComponent.present();
   }
 
-  openEducation(){
-    //  let loginComponent = await this.modalCtrl.create({
-    //    component: AccessHistoryComponent
-    //  });
+  async openEducation(){
+    let educationComponent = await this.modalCtrl.create({
+        component: EducationComponent
+      });
   
-    //  loginComponent.present();
+      educationComponent.present();
     }
 
 }
